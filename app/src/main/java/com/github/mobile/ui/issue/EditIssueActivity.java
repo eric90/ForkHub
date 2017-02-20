@@ -100,7 +100,7 @@ public class EditIssueActivity extends DialogFragmentActivity {
     public static Intent createIntent(final Issue issue,
             final String repositoryOwner, final String repositoryName,
             final User user) {
-        Builder builder = new Builder("repo.issues.edit.VIEW");
+        Builder builder = Builder.create("repo.issues.edit.VIEW");
         if (user != null)
             builder.add(EXTRA_USER, user);
         builder.add(EXTRA_REPOSITORY_NAME, repositoryName);

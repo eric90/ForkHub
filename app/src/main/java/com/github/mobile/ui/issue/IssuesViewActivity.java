@@ -101,7 +101,7 @@ public class IssuesViewActivity extends PagerActivity {
             pullRequests[index] = IssueUtils.isPullRequest(issue);
             index++;
         }
-        return new Builder("issues.VIEW").add(EXTRA_ISSUE_NUMBERS, numbers)
+        return Builder.create("issues.VIEW").add(EXTRA_ISSUE_NUMBERS, numbers)
                 .add(EXTRA_REPOSITORY, repository)
                 .add(EXTRA_POSITION, position)
                 .add(EXTRA_PULL_REQUESTS, pullRequests).toIntent();
