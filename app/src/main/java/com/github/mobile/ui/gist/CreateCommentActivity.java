@@ -41,7 +41,7 @@ public class CreateCommentActivity extends
      * @return intent
      */
     public static Intent createIntent(Gist gist) {
-        Builder builder = new Builder("gist.comment.create.VIEW");
+        Builder builder = Builder.create("gist.comment.create.VIEW");
         builder.gist(gist);
         return builder.toIntent();
     }
