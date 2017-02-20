@@ -61,7 +61,7 @@ public class CreateCommentActivity extends
      */
     public static Intent createIntent(Repository repository, String commit,
             String path, int position) {
-        Builder builder = new Builder("commit.comment.create.VIEW");
+        Builder builder = Builder.create("commit.comment.create.VIEW");
         builder.repo(repository);
         builder.add(EXTRA_BASE, commit);
         if (isLineComment(path, position))

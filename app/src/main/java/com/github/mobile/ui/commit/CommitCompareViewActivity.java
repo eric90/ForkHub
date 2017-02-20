@@ -52,7 +52,7 @@ public class CommitCompareViewActivity extends DialogFragmentActivity {
      */
     public static Intent createIntent(final Repository repository,
             final String base, final String head) {
-        Builder builder = new Builder("commits.compare.VIEW");
+        Builder builder = Builder.create("commits.compare.VIEW");
         builder.add(EXTRA_BASE, base);
         builder.add(EXTRA_HEAD, head);
         builder.repo(repository);
