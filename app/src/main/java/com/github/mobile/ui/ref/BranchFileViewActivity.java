@@ -74,7 +74,7 @@ public class BranchFileViewActivity extends BaseActivity implements
      */
     public static Intent createIntent(Repository repository, String branch,
             String file, String blobSha) {
-        Builder builder = new Builder("branch.file.VIEW");
+        Builder builder = Builder.create("branch.file.VIEW");
         builder.repo(repository);
         builder.add(EXTRA_BASE, blobSha);
         builder.add(EXTRA_PATH, file);
