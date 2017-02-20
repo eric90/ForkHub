@@ -62,7 +62,7 @@ public class CreateCommentActivity extends
      * @return intent
      */
     public static Intent createIntent(RepositoryId repoId, int issueNumber, User user, Comment comment) {
-        Builder builder = new Builder("issue.comment.create.VIEW");
+        Builder builder = Builder.create("issue.comment.create.VIEW");
         builder.repo(repoId);
         builder.add(EXTRA_ISSUE_NUMBER, issueNumber);
         builder.add(EXTRA_USER, user);
