@@ -74,7 +74,7 @@ public class CommitFileViewActivity extends BaseActivity implements
      */
     public static Intent createIntent(Repository repository, String commit,
             CommitFile file) {
-        Builder builder = new Builder("commit.file.VIEW");
+        Builder builder = Builder.create("commit.file.VIEW");
         builder.repo(repository);
         builder.add(EXTRA_HEAD, commit);
         builder.add(EXTRA_PATH, file.getFilename());

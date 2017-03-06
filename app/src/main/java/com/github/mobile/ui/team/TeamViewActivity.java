@@ -47,7 +47,7 @@ public class TeamViewActivity extends TabPagerActivity<TeamPagerAdapter> {
      * @return intent
      */
     public static Intent createIntent(final Team team, final User org) {
-        Intents.Builder builder = new Intents.Builder("team.VIEW");
+        Intents.Builder builder = Intents.Builder.create("team.VIEW");
         builder.team(team);
         builder.user(org);
         return builder.toIntent();

@@ -84,7 +84,7 @@ public class CommitViewActivity extends PagerActivity {
      */
     public static Intent createIntent(final Repository repository,
             final int position, final String... ids) {
-        Builder builder = new Builder("commits.VIEW");
+        Builder builder = Builder.create("commits.VIEW");
         builder.add(EXTRA_POSITION, position);
         builder.add(EXTRA_BASES, ids);
         builder.repo(repository);
