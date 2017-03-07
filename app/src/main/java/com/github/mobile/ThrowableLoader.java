@@ -22,6 +22,9 @@ import android.util.Log;
 import com.github.mobile.accounts.AccountUtils;
 import com.github.mobile.accounts.AuthenticatedUserLoader;
 
+import com.github.mobile.apectj.DebugTrace;
+import org.aspectj.lang.annotation.Aspect;
+
 /**
  * Loader that support throwing an exception when loading in the background
  *
@@ -53,6 +56,7 @@ public abstract class ThrowableLoader<D> extends AuthenticatedUserLoader<D> {
     }
 
     @Override
+    @DebugTrace
     public D load(final Account account) {
         exception = null;
         try {
@@ -74,6 +78,7 @@ public abstract class ThrowableLoader<D> extends AuthenticatedUserLoader<D> {
     /**
      * @return exception
      */
+    @DebugTrace
     public Exception getException() {
         return exception;
     }
@@ -83,6 +88,7 @@ public abstract class ThrowableLoader<D> extends AuthenticatedUserLoader<D> {
      *
      * @return exception
      */
+    @DebugTrace
     public Exception clearException() {
         final Exception throwable = exception;
         exception = null;
@@ -95,5 +101,6 @@ public abstract class ThrowableLoader<D> extends AuthenticatedUserLoader<D> {
      * @return data
      * @throws Exception
      */
+    @DebugTrace
     public abstract D loadData() throws Exception;
 }
