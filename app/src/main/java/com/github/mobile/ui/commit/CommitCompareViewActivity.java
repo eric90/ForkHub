@@ -78,7 +78,7 @@ public class CommitCompareViewActivity extends DialogFragmentActivity {
     private Fragment fragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         repository = getSerializableExtra(EXTRA_REPOSITORY);

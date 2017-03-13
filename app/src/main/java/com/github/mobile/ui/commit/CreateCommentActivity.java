@@ -82,7 +82,7 @@ public class CreateCommentActivity extends
     private String path;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         repository = getSerializableExtra(EXTRA_REPOSITORY);
         commit = getStringExtra(EXTRA_BASE);
         position = getIntExtra(EXTRA_POSITION);

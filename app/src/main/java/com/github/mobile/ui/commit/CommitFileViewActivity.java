@@ -36,6 +36,7 @@ import android.widget.ProgressBar;
 import com.github.kevinsawicki.wishlist.ViewUtils;
 import com.github.mobile.Intents.Builder;
 import com.github.mobile.R;
+import com.github.mobile.aspectj.DebugTrace;
 import com.github.mobile.core.code.RefreshBlobTask;
 import com.github.mobile.core.commit.CommitUtils;
 import com.github.mobile.ui.BaseActivity;
@@ -112,9 +113,15 @@ public class CommitFileViewActivity extends BaseActivity implements
     @Inject
     private HttpImageGetter imageGetter;
 
+    @DebugTrace
+    private void testAOP() {
+        Log.d("Word Up", "Bruh");
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        testAOP();
 
         setContentView(R.layout.commit_file_view);
 

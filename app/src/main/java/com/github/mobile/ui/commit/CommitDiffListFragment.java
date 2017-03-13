@@ -86,7 +86,7 @@ public class CommitDiffListFragment extends DialogFragment implements
 
     private ProgressBar progress;
 
-    private Repository repository;
+    public Repository repository;
 
     private String base;
 
@@ -414,7 +414,7 @@ public class CommitDiffListFragment extends DialogFragment implements
         return inflater.inflate(R.layout.commit_diff_list, null);
     }
 
-    private void showFileOptions(CharSequence line, final int position,
+    public void showFileOptions(CharSequence line, final int position,
             final CommitFile file) {
         final AlertDialog dialog = LightAlertDialog.create(getActivity());
         dialog.setTitle(CommitUtils.getName(file));
@@ -464,7 +464,7 @@ public class CommitDiffListFragment extends DialogFragment implements
         dialog.show();
     }
 
-    private void openFile(CommitFile file) {
+    public void openFile(CommitFile file) {
         if (!TextUtils.isEmpty(file.getFilename())
                 && !TextUtils.isEmpty(file.getSha()))
             startActivity(CommitFileViewActivity.createIntent(repository, base,
@@ -478,7 +478,7 @@ public class CommitDiffListFragment extends DialogFragment implements
      * @param item
      * @param parent
      */
-    private void selectPreviousFile(int position, Object item,
+    public void selectPreviousFile(int position, Object item,
             AdapterView<?> parent) {
         CharSequence line;
         if (item instanceof CharSequence)
@@ -506,7 +506,7 @@ public class CommitDiffListFragment extends DialogFragment implements
     public void onItemClick(AdapterView<?> parent, View view, int position,
             long id) {
         Object item = parent.getItemAtPosition(position);
-        if (item instanceof Commit)
+        /*if (item instanceof Commit)
             startActivity(CommitViewActivity.createIntent(repository,
                     ((Commit) item).getSha()));
         else if (item instanceof CommitFile)
@@ -516,5 +516,8 @@ public class CommitDiffListFragment extends DialogFragment implements
         else if (item instanceof CommitComment)
             if (!TextUtils.isEmpty(((CommitComment) item).getPath()))
                 selectPreviousFile(position, item, parent);
+                */
+        CommitTypes type = new CommitTypes();
+        type.onItemClick(parent, view, position, id, item);
     }
 }
